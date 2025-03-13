@@ -1,0 +1,33 @@
+<div>
+    <img class="flex-item pok-img" src="{{this.pokemon_pos}}" alt="">
+
+    <ul class="detail">
+        <li>
+            <b>Name:</b>
+            {{pokemon.name}}
+        </li>
+        <li>
+            <b>Height:</b> 
+            {{pokemon.height}}
+        </li>
+        <li>
+            <b>Weight:</b> 
+            {{pokemon.weight}}
+        </li>
+        @for (type of pokemon.types; track $index) {
+            <li>
+                <b>Type {{$index + 1}}: </b>
+                {{type.type.name}}
+            </li>
+        }
+        <li>
+            <b>Abilities: </b>
+            {{pokemon.abilities[0].ability.name}}
+        </li>
+    </ul>
+
+    <div class="flex-container">
+        <button (click)="changePos()" class="flex-item">Turn</button>
+        <button (click)="changeShiny()" class="flex-item">Shiny</button>
+    </div>
+</div>

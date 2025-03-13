@@ -1,0 +1,11 @@
+<h1>Pokedex</h1>
+<div class="flex-container">
+    @for (pokemon of pokemon_list.results; track $index) {
+        <div class="card flex-item">
+            <h3>{{pokemon.name}}</h3>
+            <app-pokemon-detail pokemon_url="{{pokemon.url}}"></app-pokemon-detail>
+        </div>
+    }
+</div>
+
+
